@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+    <title>UPLOAD ALERT AREA SHAPES</title>
+	<meta charset="utf-8" />
+
+	<!-- style sheets -->
+	<link rel="stylesheet" href="style.css">
+
+	<!-- leaflet css link -->
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+	<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+
+    <!--Bootstrap link-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        #map {
+            width: 100%;
+            height: 85vh;
+        }
+    </style>
+
+</head>
+<body>
+    
+    <div class="header">
+	     Flooding Alert Regions
+	</div>
+
+	<div class="sidebar">
+		<label>CERTAINTY</label>
+        <select class="form-control CERTAINTY selectFilter" data-target="SEVERITY">
+            <option value="1">-- Select Certainty --</option>
+            <option data-ref="Obs">OBSERVED</option>
+            <option data-ref="Lky">LIKELY</option>
+            <option data-ref="Poss">POSSIBLE</option>
+            <option data-ref="Unky">UNLIKELY</option>           
+        </select>
+        <label>SEVERITY</label>
+        <select class="form-control SEVERITY selectFilter" data-target="AREA OF INTEREST">
+            <option value="2">-- Select Severity --</option>
+            <option data-ref="Mn" data-belong="Obs">MINOR</option>
+            <option data-ref="Mn" data-belong="Lky">MINOR</option>
+            <option data-ref="Mn" data-belong="Poss">MINOR</option>
+            <option data-ref="Mn" data-belong="Unky">MINOR</option>
+            <option data-ref="Mod"data-belong="Obs">MODERATE</option>
+            <option data-ref="Mod"data-belong="Lky">MODERATE</option>
+            <option data-ref="Mod"data-belong="Poss">MODERATE</option>
+            <option data-ref="Mod"data-belong="Unky">MODERATE</option>
+            <option data-ref="Sev"data-belong="Obs">SEVERE</option>
+            <option data-ref="Sev"data-belong="Lky">SEVERE</option>
+            <option data-ref="Sev"data-belong="Poss">SEVERE</option>
+            <option data-ref="Sev"data-belong="Unky">SEVERE</option>
+            <option data-ref="Ext"data-belong="Obs">EXTREME</option> 
+            <option data-ref="Ext"data-belong="Lky">EXTREME</option>
+            <option data-ref="Ext"data-belong="Poss">EXTREME</option>
+            <option data-ref="Ext"data-belong="Unky">EXTREME</option>
+        </select>  
+        <label>AREA OF INTEREST ROUGH SEAS</label>
+        <select id="geofile" size= "3" multiple>
+            <option value="3">-- Select Area Of Interest --</option>
+            <option value ="ROUGH_SEAS_ALERTS\BAGO_EAST_5KM.json">BAGO_EAST_5KM</option>
+            <option value="BAGO_WEST_5KM.json">BAGO_WEST_5KM</option>
+            <option data-belong="Poss">TDAD EAST COAST</option>
+            <option data-belong="Unky">TDAD WEST COAST</option>  
+            <option data-belong="Unky">TDAD SOUTH COAST</option>   
+            <option data-belong="Unky">TDAD NORTH COAST</option>   
+        </select>       
+	</div>
+
+	<div class="content">
+		<div id="map"></div>
+	</div>
+	
+	<div class="footer">
+		Authored By: Cherise Crystal Jewel Haywood <br> Date Created: October 30th, 2021    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="selectFilter.min.js"></script>
+
+	<!-- javascript -->
+	<script src="map.js"></script>
+      <!--leaflet js link-->
+<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+
+
+</body>
+</html>
